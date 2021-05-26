@@ -6,7 +6,7 @@ using Quaternion = UnityEngine.Quaternion;
 public class SpawnEnemy : MonoBehaviour
 {
     [SerializeField] private Transform _spawnPoint;
-    [SerializeField] GameObject Meteor;
+    [SerializeField] private GameObject _meteor;
 
     private Transform[] _points;
 
@@ -28,7 +28,7 @@ public class SpawnEnemy : MonoBehaviour
         while (true)
         {
             Vector3 pointPosition = _points[Random.Range(0, _spawnPoint.childCount)].transform.position;
-            Instantiate(Meteor, pointPosition, Quaternion.identity);
+            Instantiate(_meteor, pointPosition, Quaternion.identity);
 
             yield return waitTwoSeconds;
         }

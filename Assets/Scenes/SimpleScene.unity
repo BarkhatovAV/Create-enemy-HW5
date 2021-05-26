@@ -487,7 +487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnPoint: {fileID: 1678991404}
-  Meteor: {fileID: 6583055221658838413, guid: 8ab4096e98390cf45b5f33365e632656, type: 3}
+  _meteor: {fileID: 6583055221658838413, guid: 8ab4096e98390cf45b5f33365e632656, type: 3}
 --- !u!1 &1898396327
 GameObject:
   m_ObjectHideFlags: 0
