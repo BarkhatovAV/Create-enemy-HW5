@@ -5,19 +5,17 @@ using Quaternion = UnityEngine.Quaternion;
 
 public class SpawnEnemy : MonoBehaviour
 {
-    [SerializeField] private Transform _spawnPoints;
-
-    public GameObject Meteor;
+    [SerializeField] private Transform _spawnPoint;
+    [SerializeField] GameObject Meteor;
 
     private Transform[] _points;
 
     private void Start()
     {
-        _points = new Transform[_spawnPoints.childCount];
-        for (int i = 0; i < _spawnPoints.childCount; i++)
+        _points = new Transform[_spawnPoint.childCount];
+        for (int i = 0; i < _spawnPoint.childCount; i++)
         {
-            _points[i] = _spawnPoints.GetChild(i);
-            Debug.Log(_points[i].transform.position);
+            _points[i] = _spawnPoint.GetChild(i);
         }
 
         StartCoroutine(CreateMeteors());
@@ -25,11 +23,11 @@ public class SpawnEnemy : MonoBehaviour
 
     private IEnumerator CreateMeteors()
     {
-        Debug.Log("3");
-        var waitTwoSeconds = new WaitForSeconds(2f);
+        float timeBetweenSpawn = 2f;
+        var waitTwoSeconds = new WaitForSeconds(timeBetweenSpawn);
         while (true)
         {
-            Vector3 pointPosition = _points[Random.Range(0, _spawnPoints.childCount)].transform.position;
+            Vector3 pointPosition = _points[Random.Range(0, _spawnPoint.childCount)].transform.position;
             Instantiate(Meteor, pointPosition, Quaternion.identity);
 
             yield return waitTwoSeconds;

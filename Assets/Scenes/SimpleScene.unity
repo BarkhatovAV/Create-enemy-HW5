@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af3d33b4510ff344fa92fd31f5e7f02d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnPoints: {fileID: 1678991404}
+  _spawnPoint: {fileID: 1678991404}
   Meteor: {fileID: 6583055221658838413, guid: 8ab4096e98390cf45b5f33365e632656, type: 3}
 --- !u!1 &1898396327
 GameObject:
