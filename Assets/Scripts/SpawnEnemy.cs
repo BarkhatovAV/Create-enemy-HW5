@@ -24,13 +24,13 @@ public class SpawnEnemy : MonoBehaviour
     private IEnumerator CreateMeteors()
     {
         float timeBetweenSpawn = 2f;
-        var waitTwoSeconds = new WaitForSeconds(timeBetweenSpawn);
+        var waitingTime = new WaitForSeconds(timeBetweenSpawn);
         while (true)
         {
             Vector3 pointPosition = _points[Random.Range(0, _spawnPoint.childCount)].transform.position;
             Instantiate(_meteor, pointPosition, Quaternion.identity);
 
-            yield return waitTwoSeconds;
+            yield return waitingTime;
         }
 
     }
